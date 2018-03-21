@@ -14,7 +14,13 @@ Public Class Form1
     End Sub
 
     Private Sub Quit_Click(sender As Object, e As EventArgs) Handles Quit.Click
-        Application.Exit()
+        Timer1_Tick(sender, e)
+    End Sub
+
+    Private Sub Quit_KeyPress(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles Quit.KeyPress
+        If e.KeyCode = Keys.Enter Then
+            Application.Exit()
+        End If
     End Sub
 
     Public Function MouseIsOverControl(ByVal c As Control) As Boolean
