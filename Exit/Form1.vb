@@ -17,10 +17,14 @@ Public Class Form1
         Timer1_Tick(sender, e)
     End Sub
 
-    Private Sub Quit_KeyPress(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles Quit.KeyPress
-        If e.KeyCode = Keys.Enter Then
+    Private Sub Quit_KeyPress(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles Quit.KeyDown
+
+        Console.WriteLine(e.KeyCode)
+
+        If e.KeyCode = Keys.Enter Then 'Not capturing keys.enter :(
             Application.Exit()
         End If
+
     End Sub
 
     Public Function MouseIsOverControl(ByVal c As Control) As Boolean

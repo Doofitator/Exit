@@ -62,6 +62,7 @@ Partial Class Form1
         Me.Controls.Add(Me.TabHolder)
         Me.Controls.Add(Me.Quit)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.KeyPreview = True
         Me.Name = "Form1"
         Me.ShowInTaskbar = False
         Me.Text = "Exit"
