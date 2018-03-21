@@ -17,11 +17,15 @@ Public Class Form1
         Timer1_Tick(sender, e)
     End Sub
 
-    Private Sub Quit_KeyPress(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles Quit.KeyDown
+    Private Sub Quit_Active(sender As Object, e As EventArgs) Handles Quit.GotFocus
+        TabHolder.Select()
+    End Sub
+
+    Private Sub Quit_KeyPress(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles TabHolder.KeyDown
 
         Console.WriteLine(e.KeyCode)
 
-        If e.KeyCode = Keys.Enter Then 'Not capturing keys.enter :(
+        If e.KeyCode = Keys.KeyCode.E Then 'if you hit 'e', exit.
             Application.Exit()
         End If
 
